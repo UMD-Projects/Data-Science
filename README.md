@@ -6,7 +6,7 @@
 - [Nigar Aliyeva - naliyeva@umd.edu ]()
 - [Kunal Goel - kgoel@umd.edu ](kgoel@umd.edu)
 - [Deepika Ghotra - dghotra@umd.edu ](dghotra@umd.edu)
-- [Priya Gutti - gutti@umd.edu](pgutti@umd.edu)
+- [Priya Gutti - pgutti@umd.edu](pgutti@umd.edu)
 - [Aneesh]()
 
 
