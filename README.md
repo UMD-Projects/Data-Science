@@ -31,7 +31,9 @@ Things we are planning on doing in the preprocessing/data cleaning steps:
 ## Dataset Description
 
 This is a dataset of US car accidents, published on Kaggle, from 2016-2023. Here is the brief description of the dataset:
-```This is a countrywide car accident dataset that covers 49 states of the USA. The accident data were collected from February 2016 to March 2023, using multiple APIs that provide streaming traffic incident (or event) data. These APIs broadcast traffic data captured by various entities, including the US and state departments of transportation, law enforcement agencies, traffic cameras, and traffic sensors within the road networks. The dataset currently contains approximately 7.7 million accident records. For more information about this dataset, please visit here.
+
+```
+This is a countrywide car accident dataset that covers 49 states of the USA. The accident data were collected from February 2016 to March 2023, using multiple APIs that provide streaming traffic incident (or event) data. These APIs broadcast traffic data captured by various entities, including the US and state departments of transportation, law enforcement agencies, traffic cameras, and traffic sensors within the road networks. The dataset currently contains approximately 7.7 million accident records. For more information about this dataset, please visit here.
 ``` 
 
 We would be using a subset of this dataset for our project, mostly from 2022-2023 owing to the size of the dataset. 
