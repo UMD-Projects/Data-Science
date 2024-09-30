@@ -47,11 +47,11 @@ Dataset Link: https://drive.google.com/drive/folders/10PUo_SwddCOuP29YthV6cE8qjJ
 
 We are planning to predict the likelihood and severity of an accident based in a certain area based on the time, date, weather conditions, road conditions, visibility, and other factors. We also plan on trying to predict the duration of the accident based on the same factors (if possible).
 
-** Columns to predict: **
+**Columns to predict:**
 - Severity of the accident
 - Duration of the accident (if possible)
 
-** Columns to use for prediction (including feature engineered ones): **
+**Columns to use for prediction (including feature engineered ones):**
 - Temporal Data
     - Time of day [categorical] {Morning, Afternoon, Evening, Night} (Derived from the time column)
     - Day of week [categorical] {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday} (Derived from the date column)
