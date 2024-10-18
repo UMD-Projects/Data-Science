@@ -41,77 +41,79 @@ We would be using a subset of this dataset for our project, mostly from 2022-202
 
 Dataset Link: https://drive.google.com/drive/folders/10PUo_SwddCOuP29YthV6cE8qjJq1GTIm?usp=sharing
 
-## Project Part 2: Data Preprocessing and Feature Engineering
+# Project Part 2: Data Preprocessing and Feature Engineering
 
-### (1) Objective of the project
+## (1) Objective of the Project
+We aim to predict the **severity** and **duration** of accidents based on various factors such as location, time, date, weather conditions, road conditions, visibility, and others.
 
-We are planning to predict the likelihood and severity of an accident based in a certain area based on the time, date, weather conditions, road conditions, visibility, and other factors. We also plan on trying to predict the duration of the accident based on the same factors (if possible).
+### Planned Columns for Prediction:
+- **Severity of the accident**
+- **Duration of the accident** (if attainable)
 
-**Columns to predict:**
-- Severity of the accident
-- Duration of the accident (if possible)
+### Planned Columns to Use for Prediction:
 
-**Columns to use for prediction (including feature engineered ones):**
-- Temporal Data
-    - Time of day [categorical] {Morning, Afternoon, Evening, Night} (Derived from the time column)
-    - Day of week [categorical] {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday} (Derived from the date column)
-    - Month [categorical] {January, February, March, April, May, June, July, August, September, October, November, December} (Derived from the date column)
-    - Season [categorical] {Winter, Spring, Summer, Fall} (Derived from the date column)
-- Weather Conditions
-    - Temperature [numerical]
-    - Wind speed [numerical]
-    - Precipitation [numerical]
-    - Road conditions [categorical] {Dry, Wet, Snow, Ice, Other}
-    - Visibility
-- Location
-    - City [categorical]
-    - State [categorical]
-    - Geography [categorical] {Mountainous, Coastal, Desert, Plains, Other} {Derived from global information}
-    - Development [categorical] {Urban, Suburban, Rural} {Derived from global information}
-- POI (Point of Interest) [categorical] {Railway crossing, Junction, Traffic signal, Roundabout}
+#### Traffic Attributes:
+- **Datetime**
+- **Day of week** [categorical] {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}  
+  (Derived from the date column)
 
-### (2) Feature Engineering
+#### Address Attributes:
+- **Location**
+- **City** [categorical]
+- **State** [categorical]
+- **Geography** [categorical] {Mountainous, Coastal, Desert, Plains, Other}  
+  (Derived from geographical information)
+- **Development** [categorical] {Urban, Suburban, Rural}  
+  (Derived from geographical information)
 
-We plan on doing the following feature engineering steps:
-- Use the date and time columns to derive new columns like time of day, day of week, month, season etc
-- Use the geo location to derive new columns like city, state, country etc
-- Use PCA (Principal Component Analysis) to reduce the dimensionality of the dataset (Condense the numerous columns into a few principal components)
-- Simplify the weather conditions column into a few categories (eg, Rain, Snow, Ice, Other)
-- Derive Geo information from the location data (eg, Mountainous, Coastal, Desert, Plains, Other)
-- Derive Development information from the location data (eg, Urban, Suburban, Rural)
-- Use Frequency Encoding for temporal data (eg, Encode minutes of duration into a frequency encoding, street and city names etc)
+#### Weather Attributes:
+- **Season** [categorical] {Winter, Spring, Summer, Fall}  
+  (Derived from the date column)
+- **Weather Condition**
+- **Temperature** [numerical]
+- **Wind Speed** [numerical]
+- **Precipitation** [numerical]
+- **Road Conditions** [categorical] {Dry, Wet, Snow, Ice, Other}
+- **Visibility**
 
-### (3) Data Imputation and balancing
+#### Points of Interest (POI) Attributes:
+- **Railway Crossing**
+- **Junction**
+- **Traffic Signal**
+- **Roundabout**
+- **Period of the day** [categorical]
 
-Decision on Handling Imbalance:
+## (2) Feature Engineering
 
-If the class imbalance is severe (e.g., minority class represents less than 10% of the data):
+We plan to perform the following feature engineering steps:
 
-We will use SMOTE (Synthetic Minority Over-sampling Technique) to create synthetic examples of the minority class, as well as random undersampling of the majority class.
-Our approach will be: "Create synthetic data for the minority class(es) using SMOTE to achieve a more balanced distribution, aiming for at least a 3:7 ratio between minority and majority classes, maybe also use random undersampling to further balance the classes."
+- Use the date and time columns to derive new columns such as time of day, day of the week, month, season, etc.
+- Simplify the weather conditions column into broader categories (e.g., Rain, Snow, Ice, Other).
+- Extract geographical information from location data (e.g., Mountainous, Coastal, Desert, Plains, Other).
+- Create a column indicating the development level of a city based on location data (e.g., Urban, Suburban, Rural).
+- Apply frequency encoding to temporal data (e.g., encode minute, street, and city name columns).
+- Use Principal Component Analysis (PCA) to reduce dataset dimensionality by condensing numerous columns into a few principal components.
 
-**We would be balancing the Severity column as the class distribution is highly imbalanced:**
-```
+## (3) Data Imputation and Balancing
+
+### Imbalanced Severity Distribution:
+```plaintext
 Severity
-2    3227546
-3     226042
-4      81224
-1      38026
+2 3227546
+3 226042
+4 81224
+1 38026
 ```
+### Decision on Handling Imbalance
 
-If the class imbalance is moderate (e.g., minority class represents 10-30% of the data):
+The class imbalance between severity level 4 and the other categories is approximately **1:42**. To address this, our strategy includes the following steps:
 
-We will use a combination of oversampling the minority class and undersampling the majority class.
-Our approach will be: "Apply a combination of random oversampling to the minority class and random undersampling to the majority class to achieve a 4:6 ratio between classes."
+- **Compensation Methods**: We will assign higher weights to the minority class (severity level 4) during model training without altering the data distribution. Following best practices, we will begin by using compensation techniques to balance the model’s performance.
+  
+- **Undersampling as Backup**: If compensation methods underperform, we may apply **undersampling** to the majority classes, taking into account the large dataset size.
 
+- **Risk of Overfitting**: **Oversampling** the minority class could lead to overfitting, which we will carefully avoid.
 
-If the class imbalance is mild (e.g., minority class represents 30-40% of the data):
+- **Hybrid Sampling & SMOTE**: We will also explore a combination of **under- and oversampling** techniques, along with **SMOTE**, for comparative analysis to achieve optimal results.
 
-We will primarily rely on algorithmic approaches rather than data-level techniques.
-Our approach will be: "Adjust class weights in the model to give more importance to the minority class during training. We will not alter the data distribution itself."
-
-
-If the classes are relatively balanced (e.g., no class represents less than 40% of the data):
-
-We will not use any specific techniques to deal with imbalanced data.
-Our justification will be: "All classes are at worst imbalanced 4:6, which is not severe enough to require special handling techniques. Standard machine learning algorithms should perform adequately without additional balancing."
+This approach provides a balance between flexibility and efficiency, ensuring the model can handle class imbalance effectively while minimizing the risk of overfitting.
