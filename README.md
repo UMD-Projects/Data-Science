@@ -117,3 +117,8 @@ The class imbalance between severity level 4 and the other categories is approxi
 - **Hybrid Sampling & SMOTE**: We will also explore a combination of **under- and oversampling** techniques, along with **SMOTE**, for comparative analysis to achieve optimal results.
 
 This approach provides a balance between flexibility and efficiency, ensuring the model can handle class imbalance effectively while minimizing the risk of overfitting.
+
+
+# Project Part 3: Data Analysis and Model Building
+
+## All the main code and project report is at [Project Report](ProjectPart3.ipynb)
