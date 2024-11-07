@@ -122,3 +122,64 @@ This approach provides a balance between flexibility and efficiency, ensuring th
 # Project Part 3: Data Analysis and Model Building
 
 ## All the main code and project report is at [Project Report](ProjectPart3.ipynb)
+
+# Project Part 4: Data Visualizations
+
+## The main notebook is at [Project Part 4](ProjectPart4.ipynb). However, due to the massive size of the file, we have uploaded the same to colab, and the link is [here](https://colab.research.google.com/drive/172HZmX7l9PuIUKtUe7LNR2xy7pEo4MND?usp=sharing).
+
+## We have the following major visualizations in the notebook:
+
+### 1. US Accidents Severity Heatmap (2021-2023)
+
+- **Description:** A Folium heatmap displaying the geographical distribution of accidents across the US, with severity indicated by intensity.
+- **Purpose:** Identify accident hotspots and spatial patterns in severity.
+
+### 2. Distribution of Accident Severity Levels
+
+- **Description:** A Plotly Express histogram showing the frequency of accidents by severity level (1 to 4).
+- **Purpose:** Understand the prevalence of each severity level.
+
+### 3. Top 10 Features Correlated with Accident Severity
+
+- **Description:** A horizontal bar chart depicting the top 10 features most correlated with accident severity.
+- **Purpose:** Highlight key factors associated with severity for further analysis.
+
+### 4. Top 10 States with Highest Accident Counts
+
+- **Description:** A bar chart listing the top 10 states by number of accidents.
+- **Purpose:** Identify regions with the highest accident occurrences.
+
+### 5. Frequency of Traffic Factors Associated with Incidents
+
+- **Description:** A bar plot showing how often specific traffic factors (e.g., traffic signals, junctions) are present in accidents.
+- **Purpose:** Assess the impact of environmental and infrastructural factors on accidents.
+
+### 6. Distribution of Weather Factors
+
+- **Description:** A boxplot illustrating the distribution of various weather parameters (Temperature, Humidity, etc.) sampled from the dataset.
+- **Purpose:** Analyze weather conditions prevalent during accidents.
+
+### 7. Distribution of Accidents by Hour (Weekends vs. Weekdays)
+
+- **Description:** A line plot comparing accident percentages by hour for weekends and weekdays.
+- **Purpose:** Reveal temporal patterns and peak hours for accidents.
+
+### 8. Weekly Distribution of Road Accidents
+
+- **Description:** A bar chart showing the percentage of accidents occurring each day of the week.
+- **Purpose:** Identify days with higher accident rates.
+
+### 9. Incidents Over Time (Monthly)
+
+- **Description:** A line chart displaying the number of incidents per month from 2021 to 2023.
+- **Purpose:** Observe trends and fluctuations in accident occurrences over time.
+
+### 10. US Accidents Severity Map (2021-2023)
+
+- **Description:** An interactive Folium map with clustered markers colored by accident severity.
+- **Purpose:** Provide detailed geographical visualization of accidents.
+
+### 11. Correlation Heatmap of Top Features Related to Accident Severity
+
+- **Description:** A heatmap of correlation coefficients among top features related to severity.
+- **Purpose:** Visualize relationships between key variables affecting severity.
