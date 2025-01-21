@@ -7,7 +7,7 @@
 - [Kunal Goel - kgoel@umd.edu ](kgoel@umd.edu)
 - [Deepika Ghotra - dghotra@umd.edu ](dghotra@umd.edu)
 - [Priya Gutti - gutti@umd.edu](pgutti@umd.edu)
-- [Aneesh ]()
+- [Aneesh Hatkar - ah16@umd.edu ](ah16@umd.edu)
 
 
 ## Project Part 1: Description and Proposal
