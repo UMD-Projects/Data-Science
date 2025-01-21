@@ -18,7 +18,7 @@
 - [Project Part 2: Data Preprocessing and Feature Engineering](#project-part-2-data-preprocessing-and-feature-engineering)
 
 Things we are planning on doing in the preprocessing/data cleaning steps:
-- Wether ID column has any duplicates and verifying if it is a primary key
+- Weather ID column has any duplicates and verifying if it is a primary key
 - Convert the date columns to proper parsable date format
 - Convert all the numerical columns to proper numerical format (int/float)
 - Subtract the end date from the start date to sanity check the data
